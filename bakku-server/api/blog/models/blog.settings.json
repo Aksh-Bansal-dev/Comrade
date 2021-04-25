@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "blog",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "eventTime": {
+      "type": "datetime",
+      "required": false
+    },
+    "tags": {
+      "type": "enumeration",
+      "enum": [
+        "firstyear",
+        "secondyear",
+        "thirdyear",
+        "fourthyear",
+        "tech",
+        "event"
+      ]
+    }
+  }
+}
