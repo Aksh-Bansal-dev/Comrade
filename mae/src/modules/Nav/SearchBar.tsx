@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
-import {InputBase, IconButton, Tooltip} from '@material-ui/core';
+import {InputBase, IconButton} from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import SearchIcon from "@material-ui/icons/Search";
 import {invalidRegex} from "../../utils/getUrl";
 import useUrlStore from "../../store/QueryStore";
 import ClearIcon from "@material-ui/icons/Clear";
+import HelpPopover from "./HelpPopover";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -112,6 +113,7 @@ const SearchBar:React.FC<SearchBarProps> = () => {
       <IconButton onClick={handleClear} className={clearClass}>
         <ClearIcon />
       </IconButton>
+        <HelpPopover />
       </form>
     </div>
   );
