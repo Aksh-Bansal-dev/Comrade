@@ -2,16 +2,19 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "react-hooks"
+
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
+
   ], "rules": {
     "single": 1,
     "indent": [true, "tabs", 2],
-    "semi": 2
-
+    "semi": 2,
+    "react-hooks/rules-of-hooks": "error" // Checks rules of Hooks
   }
 }
