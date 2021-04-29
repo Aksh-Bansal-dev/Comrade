@@ -32,8 +32,20 @@
         "thirdyear",
         "fourthyear",
         "tech",
-        "event"
-      ]
+        "event",
+        "other"
+      ],
+      "required": true,
+      "default": "other"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "authorName": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\w{3,20}$"
     }
   }
 }
