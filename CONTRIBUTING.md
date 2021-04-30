@@ -18,7 +18,7 @@ commit messages are standardized:
 - Commit messages should have this format:
   `<type>[optional scope]: <description>`
 - Type should be `fix`(if fixed some bug), `feat`(if added new feature), `docs`(changes in documentation) or `test`(added new tests)
-- Scope should be `bakku-server` or `mae` or `global` if your changes affects both.
+- Scope should be `bakku` or `mae` or `global` if your changes affects both.
 - Description should be concise.
 
 ## Local Setup
