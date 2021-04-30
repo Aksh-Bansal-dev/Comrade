@@ -41,12 +41,7 @@ jobs:
       - name: Test mae
         run: cd mae && npm run test
         
-      - name: Run mae
-        run : cd mae && npm run dev
-        
       - name: Install dependecies(bakku)
         run: cd bakku-server && npm ci
-      
-      - name: Run bakku
-        run : cd bakku-server npm run develop
+
       
