@@ -25,8 +25,6 @@ commit messages are standardized:
 
 - Fork and clone the repo.
 - Run `git add remote upstream https://github.com/Aksh-Bansal-dev/Comrade.git`
-- Run `git checkout -b patch-<number of PR you've merged in this repo>`
-- Run `git fetch upstream` & `git rebase upstream/main` to fetch updated into your local repo
 
 #### Backend setup
 
@@ -40,6 +38,12 @@ commit messages are standardized:
 - Run `cd mae`
 - Run `npm install` to install all dependencies.
 - Run `npm run dev` to start the server and visit [site](http://localhost:3000).
+
+#### Before making PR
+
+- Run `git fetch upstream` & `git rebase upstream/main` to fetch updated codebase into your local repo.
+- Run `git checkout -b patch-<number of PR you've merged in this repo>`
+- Test the frontend(mae) by running `npm run test` before making PR.
 
 ## License
 
