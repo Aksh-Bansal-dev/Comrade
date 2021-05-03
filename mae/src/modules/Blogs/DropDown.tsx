@@ -16,7 +16,7 @@ const DropDown:React.FC<DropDownProps> = () =>  {
   const classes = useStyles();
   const setBlog = useBlogStore(state=>state.setBlog);
 
-  const [check, setCheck] = useState([false, false, false, false, false, true, false])
+  const [check, setCheck] = useState([false, false, false, false, true, false])
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // @ts-ignore
     setBlog(nameToTag.get(event.target.name), event.target.checked);

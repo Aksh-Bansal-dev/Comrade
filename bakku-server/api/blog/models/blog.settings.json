@@ -27,10 +27,9 @@
     "tags": {
       "type": "enumeration",
       "enum": [
-        "firstyear",
-        "secondyear",
-        "thirdyear",
-        "fourthyear",
+        "personalexperience",
+        "educational",
+        "academic",
         "tech",
         "event",
         "other"

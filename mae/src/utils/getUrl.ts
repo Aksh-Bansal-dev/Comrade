@@ -11,11 +11,11 @@ const getUrl: getUrlType = (pageNum, query) => {
     if (query[0] === "#") {
       const tagName = query.substring(1);
       // @ts-ignore
-      if (map.has(tagName)) {
-        return `${base}&tags=${tagName}`;
-      } else {
-        return base;
-      }
+      // if (map.has(tagName)) {
+      return `${base}&tags=${tagName}`;
+      // } else {
+      //   return base;
+      // }
     } else if (query[0] === "@") {
       return `${base}&authorName=${query.substring(1)}`;
     } else {

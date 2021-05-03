@@ -7,10 +7,11 @@ import NavBar from "../src/modules/Nav/NavBar";
 import BlogsContainer from "../src/modules/Blogs/BlogsContainer";
 import DropDown from "../src/modules/Blogs/DropDown";
 import {tagsType} from "../src/utils/tags";
-import { Container } from "@material-ui/core";
+import { Container,Typography } from "@material-ui/core";
 import PaginationBtn from "../src/modules/ButtonGroups/PaginationBtn";
 import useQueryStore from "../src/store/QueryStore";
 import getUrl from "../src/utils/getUrl";
+import NoResults from "../src/modules/Blogs/NoResults";
 
 interface HomeProps {}
 
@@ -18,7 +19,7 @@ export type dataType = {
   id: React.Key & String,
   title: string,
   authorName: string,
-  tags?: tagsType,
+  tags: tagsType,
   eventTime?: string,
   content: string
 }[]
@@ -70,13 +71,11 @@ const Home:React.FC<HomeProps> = () =>  {
       <NavBar />
       <DropDown />
       {
-        data?(
+        data && data.length>=1?(
           <BlogsContainer data={data} />
         )
         :(
-          <Container>
-            <h1>No result found</h1>
-          </Container>
+          <NoResults />
         )
       }
       <PaginationBtn isNext={isNext} />

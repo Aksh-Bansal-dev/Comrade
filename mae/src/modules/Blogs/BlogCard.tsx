@@ -1,25 +1,24 @@
 import React,{useState} from "react";
 import {Grid, Typography, Paper,makeStyles, createStyles, Theme,Container } from "@material-ui/core";
 import DialogBlog from "./DialogBlog";
+import moment from "moment";
 
-import EventCard from "./EventCard";
 import {map, tagsType} from "../../utils/tags";
-import useBlogStore from "../../store/BlogStore";
 
 export interface CardProps {
   title: string;
   description: string;
   tags?: tagsType;
-  date?: string;
+  dateprops?: string;
   content: string;
 }
 
-const BlogCard:React.FC<CardProps> = ({title, description,tags,date, content}) =>  {
-  const blogs = useBlogStore(state=>state.blogs);
+const BlogCard:React.FC<CardProps> = ({title, description,tags,dateprops, content}) =>  {
+  const isEvent = tags==="event" && dateprops;
 
-  if(tags==="event"){
-    return <EventCard title={title} description={description} tag={tags} dateprops={date} content={content}/>
-  }
+  const usableDate = isEvent?moment(dateprops).format("MMM Do YYYY"): "";
+  const usableTime = isEvent?moment(dateprops).format("LT"): "";
+
 
   const useStyles = makeStyles((theme: Theme)=>createStyles({
     root: {
@@ -50,15 +49,11 @@ const BlogCard:React.FC<CardProps> = ({title, description,tags,date, content}) =
   }
 
   return (
-    <>
-    {
-      tags && blogs.includes(tags)?
-      (
-
     <Container onClick={handleClickOpen}>
       <DialogBlog content={content} open={isOpen} toggle={handleClickOpen}  title={title} author={description}/>
       <Paper className={classes.con}>
-        <Grid container item direction="column" >
+            <Grid container >
+        <Grid container xs item direction="column" >
           <Grid item>
             <Typography className={classes.title}>{title}</Typography>
           </Grid>
@@ -66,14 +61,20 @@ const BlogCard:React.FC<CardProps> = ({title, description,tags,date, content}) =
             <Typography className={classes.desc}>{description}</Typography>
           </Grid>
         </Grid>
+        <Grid item  >
+          <Grid item container direction="column">
+          <Grid item >
+            <Typography align="right" className={classes.title}>{usableDate}</Typography>
+          </Grid>
+          <Grid item >
+            <Typography align="right" className={classes.desc}>{usableTime}</Typography>
+          </Grid>
+          </Grid>
+        </Grid>
+
+        </Grid>
       </Paper>
     </Container>
-      ):
-      (
-        <></>
-      )
-    }
-    </>
   );
 }
 

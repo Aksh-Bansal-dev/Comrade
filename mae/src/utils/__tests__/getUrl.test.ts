@@ -37,6 +37,8 @@ describe("Making Link", () => {
     const queryString = "#events";
     const pageNum = 0;
 
-    expect(getUrl(pageNum, queryString)).toBe("?_limit=10&_start=0");
+    expect(getUrl(pageNum, queryString)).toBe(
+      "?_limit=10&_start=0&tags=events"
+    );
   });
 });
