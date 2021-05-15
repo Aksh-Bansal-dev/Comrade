@@ -47,5 +47,5 @@ commit messages are standardized:
 
 ## License
 
-By contributing to DogeHouse, you agree that your contributions will be licensed
+By contributing to Comrade, you agree that your contributions will be licensed
 under the [LICENSE file](LICENSE).
